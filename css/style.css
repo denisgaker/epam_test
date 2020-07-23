@@ -80,12 +80,20 @@ h1 {
     position: relative;
     margin: 0 auto;
     padding: 40px 40px;
+    text-align: center;
+    background: var(--fff);
+}
+
+h1 > span {
     color: var(--nrm_accent);
     font-size: 30px;
     line-height: 40px;
     font-weight: bold;
-    text-align: center;
-    background: var(--fff);
+}
+
+h1 > span:first-child::after {
+    content: " | ";
+
 }
 
 h1::after,
@@ -175,20 +183,20 @@ h1::before {
 }
 
 h2 {
-    margin: 0 0 40px;
+    margin: 0 100px 40px 0;
     font-size: 30px;
     line-height: 30px;
 }
 
-p {margin: 0 0 20px;}
+.book_desc p {margin: 0 0 20px;}
 
-p > span {
+.book_desc p > span {
     font-size: 22px;
     font-style: normal;
     color: var(--text);
 }
 
-p > span.meta {
+.book_desc p > span.meta {
     color: #999;
     font-style: italic;
 }
@@ -452,6 +460,8 @@ footer {
 }
 
 /* ? Блок для оповещений предупреждений*/
+.md_form_info {display: none;}
+
 .md_form_info > p {
     text-align: center;
     color: var(--wrn);
@@ -472,4 +482,159 @@ footer {
 .md_form_btn_wrap > button {
     display: block;
     margin: 0;
+}
+
+
+
+
+
+/*=========== Adaptive | Адаптив ==========*/
+@media screen and (max-width:1240px) {
+    .inner {padding: 0 20px;}
+}
+
+@media screen and (max-width:950px) {
+    .book_btn_wrapper {text-align: center;}
+}
+
+@media screen and (max-width:870px) {
+    h2 {
+        margin: 0 0 20px;
+        font-size: 25px;
+    }
+
+    .book_desc::after {content: none;}
+
+    .book_desc p {margin: 0 0 10px;}
+
+    .book_desc p > span {font-size: 18px;}
+
+    .book_autor > span.meta,
+    .book_year > span.meta {max-width: 120px;}
+}
+
+@media screen and (max-width:750px) {
+    h1 > span {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .book {display: block;}
+
+    .book_desc,
+    .book_img {max-width: 100%;}
+
+    .book_desc {
+        text-align: center;
+        padding: 0;
+    }
+
+    .book_img > img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        margin: 20px auto 10px auto;
+        text-align: center;
+    }
+
+    .book_autor > span.meta,
+    .book_year > span.meta {display: inline;}
+    
+    .book_desc p {
+        display: inline-block;
+        width: auto;
+    }
+
+    .book_desc p.book_autor::after {
+        content: ";";
+        display: inline-block;
+        margin: 0 10px 0 0;
+    }
+
+    .book_btn_wrapper {
+        position: relative;
+        right: 0;
+        left: 0;
+        margin: 30px auto 0 auto;
+    }
+
+    .modal_window {
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    h1 {padding: 20px;}
+
+    h1::before,
+    h1::after {content: none;}
+
+    .book {
+        padding: 20px 10px;
+        margin: 0 auto 50px auto;
+    }
+
+    .md_form_btn_wrap > button {
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width:500px) {
+    body {padding-bottom: 100px;}
+
+    .inner {padding: 0;}
+
+    h1 {padding: 15px 10px;}
+
+    h1 > span {display: block;}
+
+    h1 > span:first-child::after {content: "";}
+
+    h2 {
+        font-size: 18px;
+        line-height: 21px;
+        margin: 20px auto 15px auto;
+    }
+
+    .book_img > img {max-width: 250px;}
+
+    .book_desc p {
+        display: block;
+        width: 100%;
+        margin: 0 0 5px 0;
+        text-align: center;
+
+    }
+
+    .book_desc p.book_autor::after {content: none;}
+
+    .book_desc p > span {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .book_btn_wrapper > button {
+        width: 100%;
+        margin: 0 auto 10px auto;
+    }
+
+    h3 {
+        font-size: 20px;
+        line-height: 25px;
+        margin-block-start: 10px;
+        margin-block-end: 15px;
+    }
+
+    .md_form_line {margin-bottom: 10px;}
+
+    .md_form_line.autor,
+    .md_form_line.year {max-width: 100%;}
+
+    .md_form_line.year {margin-left: 0;}
+
+    .md_form_btn_wrap > button {max-width: 100%;}
+
+    .md_form_btn_wrap > button.normal {margin-bottom: 10px;}
 }
