@@ -1,0 +1,475 @@
+
+/*Variables | Переменные*/
+:root {
+    --wrn: #E05338;
+    --wrn_accent: #C74B32;
+    --nrm: #168195;
+    --nrm_accent: #126B7A;
+    --fff: #fff;
+    --text: #171f22;
+    --wrap: rgba(23, 31, 34, .9);
+    --borders: #ccc;
+    --shadow: rgba(0,0,0,0.3);
+}
+
+
+
+
+
+/*Reset style | Сброс стилей*/
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html,
+body,
+header,
+footer,
+section,
+div,
+.inner {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+h1, h2, 
+p, span, 
+a, button, 
+input[type="text"] {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    color: var(--text);
+}
+
+a,
+button,
+input[type="text"] {
+    outline: none !important;
+}
+/*END reset...*/
+
+
+
+
+
+/*Content style | Стили контента*/
+body {
+    padding-bottom: 150px;
+    background: url('../img/body_bg.jpg') center center / cover no-repeat fixed;
+}
+
+header {
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.inner {max-width: 1200px;}
+
+h1 {
+    position: relative;
+    margin: 0 auto;
+    padding: 40px 40px;
+    color: var(--nrm_accent);
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+    background: var(--fff);
+}
+
+h1::after,
+h1::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+h1:after {
+    bottom: 30px;
+    left: 30px;
+    border-bottom: 3px solid var(--borders);
+    border-left: 3px solid var(--borders);
+}
+
+h1::before {
+    top: 30px;
+    right: 30px;
+    border-top: 3px solid var(--borders);
+    border-right: 3px solid var(--borders);
+}
+
+.book,
+.modal_window,
+.md_form,
+.md_form_btn_wrap {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+}
+
+
+/* ? Картинка книги*/
+.book
+ {
+    align-items: stretch;
+    -webkit-align-items: stretch;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+
+    margin: 0 auto 50px;
+    padding: 30px;
+    border: 1px solid var(--borders);
+    background: var(--fff);
+
+    -webkit-box-shadow: 2px 3px 4px 2px var(--shadow);
+       -moz-box-shadow: 2px 3px 4px 2px var(--shadow);
+        -ms-box-shadow: 2px 3px 4px 2px var(--shadow);
+         -o-box-shadow: 2px 3px 4px 2px var(--shadow);
+            box-shadow: 2px 3px 4px 2px var(--shadow);
+}
+
+.book_img {
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.book_img > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: bisque;
+}
+
+
+/* ? Описание книги*/
+.book_desc {
+    position: relative;
+    max-width: calc(100% - 200px);
+    padding: 0 30px 30px;
+}
+
+.book_desc::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    border-top: 3px solid var(--borders);
+    border-right: 3px solid var(--borders);
+}
+
+h2 {
+    margin: 0 0 40px;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+p {margin: 0 0 20px;}
+
+p > span {
+    font-size: 22px;
+    font-style: normal;
+    color: var(--text);
+}
+
+p > span.meta {
+    color: #999;
+    font-style: italic;
+}
+
+.book_autor > span.meta {
+    display: inline-block;
+    width: 100%;
+    max-width: 180px;
+}
+.book_year > span.meta {
+    display: inline-block;
+    width: 100%;
+    max-width: 180px;
+}
+
+
+/* ? Блок с кнопками в строке-книге*/
+.book_btn_wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    left: 30px;
+    width: calc(100% - 30px);
+    height: auto;
+    text-align: right;
+}
+
+
+/* ? Блок с кнопкой "Добавить книгу" в низу страницы*/
+.add_book_btn_wrap {text-align: center;}
+
+
+/* ? Кнопки*/
+button {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 15px;
+    margin: 0;
+    color: var(--fff);
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button.warning {
+    border: 1px solid var(--wrn);
+    background: var(--wrn);
+    
+    -webkit-transition: color ease .3s;
+       -moz-transition: color ease .3s;
+         -o-transition: color ease .3s;
+            transition: color ease .3s;
+}
+
+button.normal {
+    border: 1px solid var(--nrm);
+    background: var(--nrm);
+    
+    -webkit-transition: background ease .3s;
+       -moz-transition: background ease .3s;
+         -o-transition: background ease .3s;
+            transition: background ease .3s;
+}
+
+button.warning {margin: 0 0 0 10px;}
+
+button.warning:hover,
+button.warning:focus,
+button.warning:active {
+    background: var(--wrn_accent);
+    
+    -webkit-transition: background ease .3s;
+       -moz-transition: background ease .3s;
+         -o-transition: background ease .3s;
+            transition: background ease .3s;
+}
+
+button.normal:hover,
+button.normal:focus,
+button.normal:active {
+    background: var(--nrm_accent);
+    
+    -webkit-transition: background ease .3s;
+       -moz-transition: background ease .3s;
+         -o-transition: background ease .3s;
+            transition: background ease .3s;
+}
+
+/* ? Кнопка "Добавить книгу в низу страницы*/
+.add_book_btn_wrap > button {
+    display: block;
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+/* ? Кнопки редактировать / удалить в строке-книге*/
+.book_btn_wrapper > button {
+    width: calc(50% - 20px);
+    
+}
+
+
+/* ? Footer*/
+footer {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px 0;
+    background: #eee;
+    box-shadow: 1px -1px 5px 1px var(--wrap);
+    z-index: 1;
+}
+
+
+/* ? Модальное окно и подложка*/
+.modal_wrap {
+    display: none;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    background: var(--wrap);
+    z-index: 2;
+}
+
+.modal_wrap,
+.modal_window {
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+.modal_wrap.active {
+    display: flex;
+    display: -webkit-flex;
+}
+
+.modal_window {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    padding: 30px 20px 20px;
+    background: var(--fff);
+    z-index: 3;
+}
+
+.modal_window > h3 {
+    width: 100%;
+    text-align: center;
+}
+
+/* ? Кнопка "Закрыть" (крестик) в модальном окне*/
+.modal_window > .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    cursor: pointer;
+
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+
+    -webkit-transition: transform ease .3s;
+       -moz-transition: transform ease .3s;
+         -o-transition: transform ease .3s;
+            transition: transform ease .3s;
+}
+
+.modal_window > .close:hover,
+.modal_window > .close:focus {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+
+    -webkit-transition: transform ease .3s;
+       -moz-transition: transform ease .3s;
+         -o-transition: transform ease .3s;
+            transition: transform ease .3s;
+}
+
+.modal_window > .close > span {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 9;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+}
+
+.modal_window > .close > span.right {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.modal_window > .close > span.left {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.modal_window > h3 {
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+}
+
+/* ? Форма в модальном окне*/
+.md_form {
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.md_form {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.md_form_line {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.md_form_line.autor {max-width: calc(70% - 40px);}
+
+.md_form_line.year {max-width: 30%; margin-left: 40px;}
+
+
+/* ? Поля для ввода*/
+.md_form_line > label,
+.md_form_line > input {
+    display: block;
+    width: 100%;
+}
+
+.md_form_line > input {
+    padding: 5px 5px;
+    border: 1px solid var(--nrm);
+}
+
+.md_form_line > input.noVal {
+    border: 1px solid var(--wrn);
+}
+
+.md_form_line > label.noVal {
+    color: var(--wrn);
+}
+
+/* ? Блок для оповещений предупреждений*/
+.md_form_info > p {
+    text-align: center;
+    color: var(--wrn);
+    font-size: 20px;
+    line-height: 25px;
+}
+
+/* ? Блок с кнопками формы*/
+.md_form_btn_wrap {
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+
+    padding: 20px 0 0;
+}
+
+.md_form_btn_wrap > button {
+    display: block;
+    margin: 0;
+}
