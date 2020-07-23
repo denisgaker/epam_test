@@ -11,7 +11,140 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <div class="inner"><h1>Книжная полка | Гакер Денис</h1></div>
+    </header>
+
+    <section>
+        <div class="inner">
+            <div id="bookshelf">
+                <div class="book">
+                    <div class="book_img">
+                        <img src="https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/6609894-aleksandr-snegov-samyy-polnyy-spravochnik-krolikovoda.jpg" alt="Александр Снегов. Самый полный справочник кроликовода (2014)">
+                    </div>
+
+                    <div class="book_desc">
+                        <h2>Самый полный справочник кроликовода</h2>
+
+                        <p class="book_autor">
+                            <span class="meta">Автор: </span>
+                            <span>Александр Снегов</span>
+                        </p>
+
+                        <p class="book_year">
+                            <span class="meta">Год выпуска: </span>
+                            <span>2014</span>
+                        </p>
+
+                        <div class="book_btn_wrapper">
+                            <button type="button" class="normal" data-type="edit">Редактировать</button>
+                            <button type="button" class="warning" data-type="delete">Удалить</button>
+                        </div>
+                    </div>
+                </div>
     
+                <div class="book">
+                    <div class="book_img">
+                        <img src="https://cdn.book24.ru/v2/ITD000000000835164/COVER/cover3d1__w674.webp"
+                             alt="Адамс Ричард. Обитатели холмов (2016)">
+                    </div>
+
+                    <div class="book_desc">
+                        <h2>Обитатели холмов</h2>
+
+                        <p class="book_autor">
+                            <span class="meta">Автор: </span>
+                            <span>Адамс Ричард</span>
+                        </p>
+
+                        <p class="book_year">
+                            <span class="meta">Год выпуска: </span>
+                            <span>2016</span>
+                        </p>
+
+                        <div class="book_btn_wrapper">
+                            <button type="button" class="normal" data-type="edit">Редактировать</button>
+                            <button type="button" class="warning" data-type="delete">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="book">
+                    <div class="book_img">
+                        <img src="https://static-eu.insales.ru/images/products/1/147/307159187/Удивительное_путешествие_кролика_Эдварда1.jpg" 
+                             alt="Кейт ДиКамилло. Удивительное путешествие кролика Эдварда (2015)">
+                    </div>
+
+                    <div class="book_desc">
+                        <h2>Удивительное путешествие кролика Эдварда</h2>
+
+                        <p class="book_autor">
+                            <span class="meta">Автор: </span>
+                            <span>Кейт ДиКамилло</span>
+                        </p>
+
+                        <p class="book_year">
+                            <span class="meta">Год выпуска: </span>
+                            <span>2015</span>
+                        </p>
+
+                        <div class="book_btn_wrapper">
+                            <button class="normal" data-type="edit">Редактировать</button>
+                            <button class="warning" data-type="delete">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="add_book_btn_wrap">
+                    <button type="button" class="normal" data-type="edit">Добавить книгу</button>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="inner add_book_btn_wrap">
+            <button type="button" class="normal" data-type="edit">Добавить книгу</button>
+        </div>
+    </footer>
+
+    <div class="modal_wrap" id="modal_wrap">
+        <div class="modal_window" id="modal_window">
+
+            <div class="close" id="md_close">
+                <span class="right"></span>
+                <span class="left"></span>
+            </div>
+
+            <h3 id="md_heading">Редактировать книгу</h3>
+
+            <form class="md_form">
+                <div class="md_form_line name">
+                    <label for="name">Название</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="md_form_line autor">
+                    <label for="autor">Автор</label>
+                    <input type="text" name="autor" id="autor">
+                </div>
+                <div class="md_form_line year">
+                    <label for="year">Год издания</label>
+                    <input type="text" name="year" id="year">
+                </div>
+                <div class="md_form_line img">
+                    <label for="img">Ссылка на изображение</label>
+                    <input type="text" name="img" id="img">
+                </div>
+                <div class="md_form_info" id="md_form_info">
+                    <p>Вы действительно хотите удалить книгу?</p>
+                </div>
+                <div class="md_form_btn_wrap">
+                    <button type="button" class="normal" id="save">Сохранить</button>
+                    <button type="button" class="warning" id="cancel">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
